@@ -1,1 +1,2 @@
 # BookBuddy_Spring2024_CSCI499_jjenkins8890_kjones1167
+# Our team project is called BookBuddy, a personal digital book tracker. With BookBuddy, you can log your reads, and even give ratings. BookBuddy will keep track of many stats like the genres, length, ratings, and how long it took to read each book you log. This website is also extremely useful when it comes to logging/curating your "to-be-read" list for future reads.

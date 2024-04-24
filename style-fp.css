@@ -1,0 +1,85 @@
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffe6f2; /* Light pink */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+.card {
+    border: 1px solid #ff80bf; /* Dark pink */
+    border-radius: 10px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ff80bf; /* Dark pink */
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #ff80bf; /* Dark pink */
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #fff;
+    font-weight: bold;
+}
+
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+    color: #fff;
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ff80bf; /* Dark pink */
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+}
+
+/* Button styles */
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #ff80bf; /* Dark pink */
+    border: none;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #ffccff; /* Light pink */
+    border: none;
+    color: #ff80bf; /* Dark pink */
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    opacity: 0.8;
+}

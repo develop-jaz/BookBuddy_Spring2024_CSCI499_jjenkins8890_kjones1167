@@ -17,20 +17,18 @@ $link = mysqli_connect($servername, $username, $password, $dbname);
 
 if(mysqli_connect_error()){
     die("Database connection unsuccessful and exiting program");
-} else {
-        echo "Error adding book: " . $link->error;
-    }
+}
 
 // Handle add book
 if (isset($_POST['add_book'])) {
-    $title = $_POST['Title'];
-    $author = $_POST['Author'];
-    $genre = $_POST['Genre'];
-    $rating = $_POST['Your Rating'];
-    $length = $_POST['Length'];
+    $title = $_POST['title'];
+    $author = $_POST['author'];
+    $genre = $_POST['genre'];
+    $rating = $_POST['rating'];
+    $length = $_POST['length'];
 
     // Insert data into books table
-    $sql = "INSERT INTO books (`Title`, `Author`, `Genre`, `Your Rating`, `Length`) VALUES ('$title', '$author', '$genre', '$rating', '$length')";
+    $sql = "INSERT INTO books (`title`, `author`, `genre`, `rating`, `length`) VALUES ('$title', '$author', '$genre', '$rating', '$length')";
     if ($link->query($sql) === TRUE) {
         echo "Book added successfully";
     } else {
@@ -122,7 +120,7 @@ if (isset($_POST['change_rating'])) {
                                 <input type="text" class="form-control" id="genre" name="genre" placeholder="Enter Genre" required>
                             </div>
                             <div class="form-group">
-                                <label for="rating">Rating:</label>
+                                <label for="rating">Your Rating:</label>
                                 <input type="text" class="form-control" id="rating" name="rating" placeholder="Enter Rating" required>
                             </div>
                             <div class="form-group">

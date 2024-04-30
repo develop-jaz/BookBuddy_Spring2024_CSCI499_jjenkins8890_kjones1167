@@ -13,41 +13,31 @@ if(mysqli_connect_error()){
     die("Database connection unsuccessful and exiting program");
 }
 
-else {
-    echo "Database connection successful";
-}
 
 // Handle login
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $query = "SELECT * FROM signin WHERE email='$email' AND password='$password'";
-    $result = mysqli_query($link, $query);
+    // Regex pattern for email validation
+    $email_pattern = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
 
-    if (mysqli_num_rows($result) == 1) {
-        $_SESSION['email'] = $email;
-        header('Location: main.php');
-        exit();
+    // Check if email format is valid
+    if (!preg_match($email_pattern, $email)) {
+        $error = "Invalid email format";
     } else {
-        $error = "Invalid email or password";
+        // Query database for login
+        $query = "SELECT * FROM signin WHERE email='$email' AND password='$password'";
+        $result = mysqli_query($link, $query);
+
+        if (mysqli_num_rows($result) == 1) {
+            $_SESSION['email'] = $email;
+            header('Location: main.php');
+            exit();
+        } else {
+            $error = "Invalid email or password";
+        }
     }
-
-
-
-    /*$email = $_POST['email'];
-    $password = $_POST['password'];
-
-    $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
-    $result = mysqli_query($link, $query);
-
-    if (mysqli_num_rows($result) == 1) {
-        $_SESSION['email'] = $email;
-        header('Location: main.php');
-        exit();
-    } else {
-        $error = "Invalid email or password";
-    }*/
 }
 
 // Handle signup
@@ -55,24 +45,25 @@ if (isset($_POST['signup'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $query = "INSERT INTO signin (email, password) VALUES ('$email', '$password')";
-    mysqli_query($link, $query);
+    // Regex pattern for email validation
+    $email_pattern = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
 
-    $_SESSION['email'] = $email;
-    header('Location: main.php');
-    exit();
-    
-    
-    /*$email = $_POST['email'];
-    $password = $_POST['password'];
+    // Check if email format is valid
+    if (!preg_match($email_pattern, $email)) {
+        $error = "Invalid email format";
+    } else {
+        // Insert new user into database
+        $query = "INSERT INTO signin (email, password) VALUES ('$email', '$password')";
+        mysqli_query($link, $query);
 
-    $query = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
-    mysqli_query($conn, $query);
-
-    $_SESSION['email'] = $email;
-    header('Location: main.php');
-    exit();*/
+        $_SESSION['email'] = $email;
+        header('Location: main.php');
+        exit();
+    }
 }
+    
+    
+    
 
 // Handle logout
 if (isset($_POST['logout'])) {

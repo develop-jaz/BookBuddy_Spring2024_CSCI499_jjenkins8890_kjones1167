@@ -7,22 +7,8 @@ if (!isset($_SESSION['email'])) {
     exit();
 }
 
-// Database configuration
-$servername = "localhost";
-$username = 'root'; 
-$password = '';
-$dbname = "final-project-db";
-
-$link = mysqli_connect($servername, $username, $password, $dbname);    
-
-if(mysqli_connect_error()){
-    die("Database connection unsuccessful and exiting program");
-}
-
-// Fetch user's profile information from the database (you'll need to modify this query based on your database schema)
-$query = "SELECT * FROM signin WHERE Email='{$_SESSION['Email']}'";
-$result = mysqli_query($link, $query);
-$userData = mysqli_fetch_assoc($result);
+// Current email of the logged-in user
+$current_email = $_SESSION['email'];
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +35,7 @@ $userData = mysqli_fetch_assoc($result);
                     <a class="nav-link" href="profile.php">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="dashboard.php">Dashboard</a>
+                    <a class="nav-link" href="dashboard.php">My Library</a>
                 </li>
             </ul>
         </div>
@@ -62,7 +48,7 @@ $userData = mysqli_fetch_assoc($result);
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Profile Information</h5>
-                        <p class="card-text"><strong>Email:</strong> <?php echo $userData['email']; ?></p>
+                        <p class="card-text"><strong>Email:</strong> <?php echo $current_email; ?></p>
                         <!-- Add more profile information as needed -->
                     </div>
                 </div>

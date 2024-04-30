@@ -64,34 +64,4 @@ function changeRating(id) {
 }
 
 
-// Function to change the rating of a book in the library
-/*function changeRating(id) {
-    //var id = prompt('Enter the title of the book to change rating:');
-    var newRating = prompt('Enter the new rating for the book:');
 
-    // Construct SQL UPDATE statement
-    var sql = "UPDATE books SET rating='" + newRating + "' WHERE id'" + id + "'";
-
-    // Send SQL statement to server for execution
-    executeSqlStatement(sql);
-}
-
-// Function to execute SQL statement
-function executeSqlStatement(sql) {
-    // Send SQL statement to server for execution
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'execute_sql.php', true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                console.log(xhr.responseText);
-                // Handle success message or update UI accordingly
-            } else {
-                console.error('Error executing SQL statement:', xhr.status);
-                // Handle error or display error message to user
-            }
-        }
-    };
-    xhr.send('sql=' + encodeURIComponent(sql));
-}*/

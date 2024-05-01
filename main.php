@@ -82,8 +82,11 @@ if (isset($_POST['change_rating'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style-fp.css">
+    
+
 </head>
-<body>
+<body class="fun-background">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">BookBuddy</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -108,18 +111,19 @@ if (isset($_POST['change_rating'])) {
         </div>
     </nav>
 
-    <div class="container mt-4">
-        <h1>Welcome to BookBuddy!</h1>
-        <p>Track your reading progress and discover new books.</p>
-        
-        <!-- Benefits of Tracking Your Reading -->
-        <h2>Benefits of Tracking Your Reading</h2>
-        <ul>
-            <li>Helps to diversify your reading habits</li>
-            <li>Helps to improve retention</li>
-            <li>Helps to gain valuable insights about yourself as a reader</li>
-        </ul>
-    </div>
+        <div class="container mt-4">
+            <h1>Welcome BookBuddy!</h1>
+            <p>Track your reading progress and discover new books.</p>
+            
+            <!-- Benefits of Tracking Your Reading -->
+            <h2>Benefits of Tracking Your Reading</h2>
+            <ul>
+                <li>Helps to diversify your reading habits</li>
+                <li>Helps to improve retention</li>
+                <li>Helps to gain valuable insights about yourself as a reader</li>
+            </ul>
+        </div>
+
 
     <div class="container mt-4">
         <div class="row justify-content-center">
@@ -173,7 +177,7 @@ if (isset($_POST['change_rating'])) {
                             <div class="form-group">
                                 <input type="text" class="form-control" name="new_rating" placeholder="Enter New Rating">
                             </div>
-                            <button type="submit" class="btn btn-secondary" name="change_rating">Change Book Rating</button>
+                            <button type="submit" class="btn btn-primary" name="change_rating">Change Book Rating</button>
                         </form>
                     </div>
                 </div>

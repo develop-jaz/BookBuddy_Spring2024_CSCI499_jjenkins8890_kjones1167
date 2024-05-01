@@ -1,7 +1,6 @@
 /* Global styles */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #ffe6f2; /* Light pink */
+    font-family: 'Courier New', 'monospace';
     margin: 0;
     padding: 0;
 }
@@ -9,23 +8,20 @@ body {
 .container {
     max-width: 800px;
     margin: 50px auto;
-    text-align: center; /* Align text in container to center */
 }
 
 .card {
-    border: 1px solid #ff80bf; /* Dark pink */
+    border: 1px solid #ffcc00; /* Bright yellow */
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #fff; /* Light orange */
     margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
-    text-align: left; /* Align text inside card to left */
 }
 
 .card-title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #ff80bf; /* Dark pink */
-    text-align: center; /* Align card titles to center */
+    color: #ff6600; /* Orange */
 }
 
 .card-body {
@@ -34,7 +30,7 @@ body {
 
 /* Navbar styles */
 .navbar {
-    background-color: #ff80bf; /* Dark pink */
+    background-color: #ffcc00; /* Bright yellow */
 }
 
 .navbar-brand,
@@ -47,44 +43,27 @@ body {
 .navbar-nav .nav-link:hover {
     color: #fff;
 }
-
-/* Form styles */
-.form-group {
-    margin-bottom: 20px;
-    text-align: left; /* Align form elements to left */
-}
-
-.form-control {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ff80bf; /* Dark pink */
-    border-radius: 5px;
-    background-color: #fff;
-    color: #000;
-}
-
 /* Button styles */
 .btn {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    text-align: center; /* Align button text to center */
 }
 
 .btn-primary {
-    background-color: #ff80bf; /* Dark pink */
+    background-color: #ff6600; /* Orange */
     border: none;
     color: #fff;
 }
 
-.btn-secondary {
-    background-color: #ffccff; /* Light pink */
-    border: none;
-    color: #ff80bf; /* Dark pink */
+.btn-primary:hover {
+    opacity: 0.8;
 }
 
-.btn-primary:hover,
-.btn-secondary:hover {
-    opacity: 0.8;
+/* Fun swirl pattern background for main.php */
+.fun-background {
+    background-color: #ffe6cc; /* Light orange */
+    background-image: radial-gradient(#fff 5%, transparent 5%);
+    background-size: 50px 50px; /* Size of the dots */
 }
